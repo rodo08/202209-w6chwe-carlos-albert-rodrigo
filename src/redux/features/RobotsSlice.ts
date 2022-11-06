@@ -9,19 +9,19 @@ export const robotInitialState: RobotState = {
   robots: [],
 };
 
-const RobotSlice = createSlice({
+const robotSlice = createSlice({
   name: "robot",
   initialState: robotInitialState,
   reducers: {
-    getRobots: (
-      initialState,
+    loadRobots: (
+      currentRobotState,
       action: PayloadAction<RobotStructure[]>
     ): RobotState => ({
-      ...initialState,
+      ...currentRobotState,
       robots: [...action.payload],
     }),
   },
 });
 
-export const robotReducer = RobotSlice.reducer;
-export const { getRobots: getRobotsActionCreator } = RobotSlice.actions;
+export const robotReducer = robotSlice.reducer;
+export const { loadRobots: loadRobotsActionCreator } = robotSlice.actions;

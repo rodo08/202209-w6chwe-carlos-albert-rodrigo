@@ -7,7 +7,7 @@ const useApi = () => {
   const dispatch = useAppDispatch();
 
   const getAllRobots = async () => {
-    const url = `${apiURL}/robots`;
+    const url = `${apiURL}`;
     const response = await fetch(url);
     const apiResponse: APIRobot = await response.json();
     dispatch(loadRobotsActionCreator(apiResponse.robotArray));
